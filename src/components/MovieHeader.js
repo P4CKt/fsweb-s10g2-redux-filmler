@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import { useSelector } from 'react-redux';
 const MovieHeader = (props) => {
-  const appTitle = "";
-  const displayFavorites = true;
+  const appTitle = useSelector(newStore=>newStore.movieReducer.appTitle);
+  const displayFavorites = useSelector(newStore=>newStore.favoriteReducer.displayFavorites);
 
   return (
     <div className="flex justify-between items-center shadow rounded-md bg-white p-2 pl-3 my-3">
